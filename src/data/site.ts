@@ -56,17 +56,17 @@ export const steps = [
 
 export const quotes = [
   {
-    text: "Josh has tons of energy to pour into the things he's passionate about. He's very creative in his approaches to problem solving and considers new ideas even-handedly without prejudging.",
+    text: "Resonant Media is creative in its approach to problem solving and considers new ideas even-handedly.",
     name: "Ed Weaver",
     role: "CEO, T2 Global",
   },
   {
-    text: "Resonant Media helped us solve several business problems. Specifically RM brought technology solutions to life quickly, on budget, with great communication. Josh operates his firm with a high degree of integrity. I whole-heartedly recommend Resonant Media.",
+    text: "Resonant Media helped us solve several business problems. The work came to life quickly, on budget, with great communication. I whole-heartedly recommend Resonant Media.",
     name: "Partner, Credera",
     role: "Vice President",
   },
   {
-    text: "I have worked with Josh as a developer / architect on several projects over a span of a few years. He is always good to work with and takes great care to make sure a project is done right and completely.",
+    text: "I have worked with Resonant Media on several projects over a span of a few years. The team takes great care to make sure a project is done right and completely.",
     name: "Mike Kelp",
     role: "CTO, GetFused",
   },
