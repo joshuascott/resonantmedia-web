@@ -1,0 +1,21 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Base
+  title="Page not found — Resonant Media Technologies"
+  description="That page is not on the Resonant Media site."
+>
+  <Header />
+  <main id="main" class="page">
+    <div class="wrap prose">
+      <p class="kicker"><span class="bar" aria-hidden="true"></span>404</p>
+      <h1>That page is not here.</h1>
+      <p>The current site is a single page, plus a short privacy note.</p>
+      <p><a class="btn" href="/">Back to the studio</a></p>
+    </div>
+  </main>
+  <Footer />
+</Base>

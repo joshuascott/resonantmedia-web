@@ -1,0 +1,35 @@
+---
+import Base from "../layouts/Base.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { site } from "../data/site";
+---
+
+<Base
+  title="Privacy — Resonant Media Technologies"
+  description="How Resonant Media Technologies handles messages sent through this site."
+>
+  <Header />
+  <main id="main" class="page">
+    <article class="wrap prose">
+      <p class="kicker"><span class="bar" aria-hidden="true"></span>Privacy</p>
+      <h1>Privacy</h1>
+      <p>
+        Resonant Media Technologies, LLC publishes this site so you can see the work
+        and get in touch. The site runs no advertising and sets no analytics cookies.
+      </p>
+      <p>
+        The contact form opens a message in your email application. The message goes
+        out when you send it. We use your name, email, organization, and message to
+        reply. We do not sell that information.
+      </p>
+      <p>
+        You can also reach us directly at
+        <a href={`mailto:${site.email}`}>{site.email}</a>
+        or {site.phoneDisplay}. Mail reaches us at {site.address[0]}, {site.address[1]}.
+      </p>
+      <p>Updated November 2026.</p>
+    </article>
+  </main>
+  <Footer />
+</Base>

@@ -1,0 +1,36 @@
+---
+import { site } from "../data/site";
+
+const path = Astro.url.pathname;
+const home = path === "/";
+const to = (id: string) => (home ? `#${id}` : `/#${id}`);
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-row">
+      <a class="footer-brand" href="/" aria-label={site.name}>
+        <img
+          src="/brand/logo-on-light.png"
+          alt=""
+          width="1024"
+          height="195"
+        />
+      </a>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href={to("services")}>Services</a>
+        <a href={to("approach")}>Approach</a>
+        <a href={to("studio")}>Studio</a>
+        <a href={site.consultingUrl} target="_blank" rel="noopener noreferrer">
+          AI Consulting
+        </a>
+        <a href={to("contact")}>Contact</a>
+        <a href="/privacy">Privacy</a>
+      </nav>
+    </div>
+    <p class="legal">
+      © 2001–{year} {site.name}, LLC. Loveland, Colorado.
+    </p>
+  </div>
+</footer>
