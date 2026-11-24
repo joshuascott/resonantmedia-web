@@ -29,7 +29,11 @@ const schema = {
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <p class="kicker"><span class="bar" aria-hidden="true"></span>Loveland, Colorado</p>
-          <h1>Applied AI,<br />built to do<br /><span>the work.</span></h1>
+          <h1 id="hero-title">
+            <span class="wave">Applied</span> <span class="wave">AI,</span><br />
+            <span class="wave">built</span> <span class="wave">to</span> <span class="wave">do</span><br />
+            <span class="wave accent">the</span> <span class="wave accent">work.</span>
+          </h1>
           <p class="lede">
             Resonant Media designs agentic systems and the software around them.
             Models, tools, and product engineering for teams that need a job done.
@@ -39,12 +43,13 @@ const schema = {
             <a class="btn btn-ghost" href="#services">What we build</a>
           </div>
         </div>
-        <div class="hero-mark" role="img" aria-label="Resonant Media mark">
+        <button class="hero-mark" type="button" aria-label="Ring the mark">
           <span class="mark-echo" aria-hidden="true"></span>
           <span class="mark-echo mark-echo-late" aria-hidden="true"></span>
+          <span class="mark-strike" aria-hidden="true"></span>
           <img class="mark-ring" src="/brand/mark-ring.png" alt="" width="512" height="512" />
           <img class="mark-core" src="/brand/mark-core.png" alt="" width="512" height="512" />
-        </div>
+        </button>
       </div>
     </section>
 
@@ -196,6 +201,26 @@ const schema = {
   </main>
   <Footer />
 </Base>
+
+<script>
+  const heroTitle = document.querySelector("#hero-title");
+  const heroMark = document.querySelector(".hero-mark");
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const ring = () => {
+    if (!(heroTitle instanceof HTMLElement) || !(heroMark instanceof HTMLElement) || reduceMotion) return;
+    heroTitle.classList.remove("is-ringing");
+    heroMark.classList.remove("is-struck");
+    void heroTitle.offsetWidth;
+    heroTitle.classList.add("is-ringing");
+    heroMark.classList.add("is-struck");
+  };
+
+  if (!reduceMotion) {
+    window.setTimeout(ring, 400);
+    heroMark?.addEventListener("click", ring);
+  }
+</script>
 
 <script>
   const form = document.querySelector("#contact-form");

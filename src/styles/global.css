@@ -272,8 +272,51 @@ button {
   font-size: clamp(2.8rem, 5.4vw, 5rem);
 }
 
-.hero h1 span {
+.hero h1 .wave {
+  display: inline-block;
+}
+
+.hero h1 .accent {
   color: var(--orange);
+}
+
+.hero h1.is-ringing .wave {
+  animation: ring-word 0.72s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.hero h1.is-ringing .wave:nth-of-type(1) { animation-delay: 0ms; }
+.hero h1.is-ringing .wave:nth-of-type(2) { animation-delay: 70ms; }
+.hero h1.is-ringing .wave:nth-of-type(3) { animation-delay: 150ms; }
+.hero h1.is-ringing .wave:nth-of-type(4) { animation-delay: 220ms; }
+.hero h1.is-ringing .wave:nth-of-type(5) { animation-delay: 290ms; }
+.hero h1.is-ringing .wave:nth-of-type(6) { animation-delay: 370ms; }
+.hero h1.is-ringing .wave:nth-of-type(7) { animation-delay: 450ms; }
+
+.hero h1.is-ringing .wave:not(.accent) {
+  animation-name: ring-word, ring-flash;
+}
+
+.hero h1.is-ringing .accent {
+  animation-name: ring-word, ring-flash-accent;
+}
+
+@keyframes ring-word {
+  0% { transform: translateY(0); }
+  40% { transform: translateY(-0.14em); }
+  72% { transform: translateY(0.045em); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes ring-flash {
+  0%,
+  100% { color: var(--text); }
+  42% { color: var(--orange); }
+}
+
+@keyframes ring-flash-accent {
+  0%,
+  100% { color: var(--orange); }
+  42% { color: #ffe1cc; }
 }
 
 .lede {
@@ -328,9 +371,11 @@ button {
 
 .hero-mark {
   position: relative;
+  display: block;
   justify-self: end;
   width: min(100%, 380px);
   aspect-ratio: 1;
+  cursor: pointer;
 }
 
 .mark-ring,
@@ -362,6 +407,22 @@ button {
 
 .mark-echo-late {
   animation-delay: 2.3s;
+}
+
+.mark-strike {
+  position: absolute;
+  left: 18%;
+  top: 18%;
+  width: 64%;
+  height: 64%;
+  border: 2px solid var(--orange);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.hero-mark.is-struck .mark-strike {
+  animation: mark-ripple 1.05s ease-out;
 }
 
 @keyframes mark-spin {
@@ -790,11 +851,13 @@ textarea {
 
   .mark-ring,
   .mark-core,
-  .mark-echo {
+  .mark-echo,
+  .hero h1.is-ringing .wave {
     animation: none;
   }
 
-  .mark-echo {
+  .mark-echo,
+  .mark-strike {
     opacity: 0;
   }
 }
