@@ -8,7 +8,6 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/joshuaacersscott",
   consultingUrl: "https://ideacollaborative.com/",
   consultingName: "Idea Collaborative",
-  address: ["P.O. Box 7131", "Loveland, CO 80537"],
   description:
     "Resonant Media builds applied AI and agentic systems for teams that need the work done. Loveland, Colorado. AI consulting with Idea Collaborative.",
 };

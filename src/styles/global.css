@@ -591,10 +591,6 @@ button {
   margin-bottom: 0.2rem;
 }
 
-address {
-  font-style: normal;
-}
-
 .form {
   display: grid;
   gap: 1rem;
