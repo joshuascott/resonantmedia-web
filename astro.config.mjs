@@ -6,9 +6,9 @@ export default defineConfig({
   integrations: [sitemap()],
   redirects: {
     "/blog": "/",
-    "/who-we-are": "/#studio",
+    "/who-we-are": "/",
     "/our-process": "/#approach",
-    "/why-all-the-mountains": "/#studio",
+    "/why-all-the-mountains": "/",
     "/privacy-policy": "/privacy",
     "/contact-us": "/#contact",
     "/sitemap": "/sitemap-index.xml",

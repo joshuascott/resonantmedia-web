@@ -13,11 +13,6 @@ const schema = {
   email: site.email,
   telephone: "+1-720-507-6888",
   image: new URL("/og.png", site.url).href,
-  founder: {
-    "@type": "Person",
-    name: "Joshua Scott",
-    sameAs: site.linkedin,
-  },
   areaServed: "United States",
   description: site.description,
 };
@@ -130,25 +125,6 @@ const schema = {
             ))
           }
         </ol>
-      </div>
-    </section>
-
-    <section class="section" id="studio">
-      <div class="wrap studio-grid">
-        <div>
-          <p class="kicker"><span class="bar" aria-hidden="true"></span>Studio</p>
-          <h2>Joshua Scott</h2>
-          <p class="role">Founder</p>
-        </div>
-        <div class="stack">
-          <p>
-            Joshua leads Resonant Media Technologies from Loveland, Colorado. His practice
-            is technology leadership, solution architecture, and shipping software. The
-            studio puts that practice to work on applied AI and agentic systems.
-          </p>
-          <p class="since">Building software since 2001.</p>
-          <a class="text-link" href={site.linkedin}>LinkedIn</a>
-        </div>
       </div>
     </section>
 
