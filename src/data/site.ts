@@ -9,13 +9,40 @@ export const site = {
   consultingUrl: "https://ideacollaborative.com/",
   consultingName: "Idea Collaborative",
   description:
-    "Resonant Media builds applied AI and agentic systems for teams that need the work done. Loveland, Colorado. AI consulting with Idea Collaborative.",
+    "Resonant Media builds applied AI, agentic systems, and the product around them. Loveland, Colorado. Consulting with Idea Collaborative.",
 };
+
+export const faqs = [
+  {
+    question: "What does Resonant Media build?",
+    answer:
+      "Agentic systems, applied AI inside a live process, and the product around them. That includes the interface, the APIs, access, evaluation, and the path into production. Workflow automation and the data those systems need are part of the same build.",
+  },
+  {
+    question: "Who is this for?",
+    answer:
+      "Teams with a job that is slow, dropped, or split across tools. A project starts when that job can be said in a sentence.",
+  },
+  {
+    question: "Where is Resonant Media based?",
+    answer: "Loveland, Colorado. Projects run with teams across the United States.",
+  },
+  {
+    question: "What does Idea Collaborative do?",
+    answer:
+      "Idea Collaborative leads workshops and hands-on AI consulting. A team leaves able to use the tools, with a short list of workflows and a plan they own. When that job is ready for software, Resonant Media builds it.",
+  },
+  {
+    question: "How does a project start?",
+    answer:
+      "Send a few sentences about the job to hello@resonantmedia.com, or use the form on this page. Name, email, organization, and the job are enough.",
+  },
+];
 
 export const services = [
   {
     title: "Agentic systems",
-    body: "Agents that carry a defined task from trigger to outcome. They read the context you trust, call the tools you allow, and stop where a person needs to make the call.",
+    body: "AI agents that carry a defined task from trigger to outcome. They read the context you trust, call the tools you allow, and stop where a person needs to make the call.",
   },
   {
     title: "Applied AI",

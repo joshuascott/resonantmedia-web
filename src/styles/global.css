@@ -591,6 +591,26 @@ button {
   color: var(--ink);
 }
 
+.faq-list {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq {
+  max-width: 46rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.faq h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.55rem;
+}
+
+.faq p {
+  max-width: var(--measure);
+  color: var(--muted);
+}
+
 .quote-list {
   margin-top: 1rem;
 }

@@ -2,19 +2,85 @@
 import Base from "../layouts/Base.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { quotes, services, site, steps } from "../data/site";
+import { faqs, quotes, services, site, steps } from "../data/site";
 
-const title = "Resonant Media Technologies — Applied AI and agentic systems";
+const title = "Resonant Media — Applied AI and Agentic Systems";
+const pageUrl = `${site.url}/`;
+const orgId = `${pageUrl}#organization`;
+const address = {
+  "@type": "PostalAddress",
+  addressLocality: "Loveland",
+  addressRegion: "CO",
+  addressCountry: "US",
+};
 const schema = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: site.name,
-  url: site.url,
-  email: site.email,
-  telephone: "+1-720-507-6888",
-  image: new URL("/og.png", site.url).href,
-  areaServed: "United States",
-  description: site.description,
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": orgId,
+      name: "Resonant Media Technologies, LLC",
+      alternateName: "Resonant Media",
+      url: pageUrl,
+      logo: `${site.url}/brand/logo-on-light.png`,
+      image: `${site.url}/og.png`,
+      email: site.email,
+      telephone: "+1-720-507-6888",
+      address,
+      areaServed: { "@type": "Country", name: "United States" },
+      knowsAbout: services.map((service) => service.title),
+      description: site.description,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${pageUrl}#website`,
+      url: pageUrl,
+      name: site.shortName,
+      description: site.description,
+      inLanguage: "en-US",
+      publisher: { "@id": orgId },
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${pageUrl}#business`,
+      name: site.name,
+      url: pageUrl,
+      image: `${site.url}/og.png`,
+      email: site.email,
+      telephone: "+1-720-507-6888",
+      description: site.description,
+      parentOrganization: { "@id": orgId },
+      address,
+      areaServed: { "@type": "Country", name: "United States" },
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Services",
+        itemListElement: services.map((service) => ({
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: service.title,
+            description: service.body,
+            provider: { "@id": orgId },
+            areaServed: "United States",
+          },
+        })),
+      },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#questions`,
+      url: `${pageUrl}#questions`,
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    },
+  ],
 };
 ---
 
@@ -35,8 +101,9 @@ const schema = {
             <span class="wave accent">the</span> <span class="wave accent">work.</span>
           </h1>
           <p class="lede">
-            Resonant Media designs agentic systems and the software around them.
-            Models, tools, and product engineering for teams that need a job done.
+            Resonant Media designs agentic systems, applied AI, and the software
+            around them. Models, tools, and product engineering for teams that need
+            a job done.
           </p>
           <div class="actions">
             <a class="btn" href="#contact">Start a project</a>
@@ -147,6 +214,30 @@ const schema = {
                   <span>{quote.role}</span>
                 </footer>
               </blockquote>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="questions" aria-labelledby="questions-title">
+      <div class="wrap">
+        <div class="section-intro">
+          <div>
+            <p class="kicker"><span class="bar" aria-hidden="true"></span>Questions</p>
+            <h2 id="questions-title">Before you write</h2>
+          </div>
+          <p class="intro-copy">
+            The work, the studio, and where AI consulting fits.
+          </p>
+        </div>
+        <div class="faq-list">
+          {
+            faqs.map((faq) => (
+              <article class="faq">
+                <h3>{faq.question}</h3>
+                <p>{faq.answer}</p>
+              </article>
             ))
           }
         </div>
