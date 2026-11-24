@@ -541,6 +541,29 @@ button {
   align-items: start;
 }
 
+.partner-grid {
+  align-items: stretch;
+}
+
+.partner-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.partner-mark {
+  display: block;
+  width: min(100%, 280px);
+  margin-top: auto;
+  padding-top: 2.5rem;
+}
+
+.partner-mark img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .stack p + p {
   margin-top: 1rem;
 }
